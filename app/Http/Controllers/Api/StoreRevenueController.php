@@ -71,6 +71,6 @@ class StoreRevenueController extends Controller
             'details'       => $rev
         ];
 
-        return new SakilaResource(true, 200, 'Succesfully get data from '.$start_date.' to '.$end_date, $data);
+        return new SakilaResource(true, '200', 'Succesfully get data from '.$start_date.' to '.$end_date, $data);
     }
 }

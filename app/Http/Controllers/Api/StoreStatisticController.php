@@ -17,11 +17,11 @@ class StoreStatisticController extends Controller
         for ($i = 0; $i < count($store); $i++) {
             $data[$i] = [
                 'store_id'          => $store[$i]->store_id,
-                'customer_count'    => $store[$i]->customer_count,
                 'store_address'     => $address[$i]->address->store_address,
+                'customer_count'    => $store[$i]->customer_count
             ];
         }
-        return new SakilaResource(true, 200, 'Succesfully get store statistic', $data);
+        return new SakilaResource(true, '200', 'Succesfully get store statistic', $data);
     }
 
     public function show($store_id)
@@ -48,6 +48,6 @@ class StoreStatisticController extends Controller
                 ];
             }
         }
-        return new SakilaResource(true, 200, 'Succesfully get store statistic', $data);
+        return new SakilaResource(true, '200', 'Succesfully get store statistic', $data);
     }
 }

@@ -29,7 +29,9 @@ class RentalHistoryController extends Controller
             $rental_history = Rental::select('film.title', 'rental.rental_date', 'rental.return_date')
             ->join('inventory', 'inventory.inventory_id', 'rental.inventory_id')
             ->join('film', 'film.film_id', 'inventory.film_id')
-            ->where('customer_id', $rental[$i]->customer_id)->get();
+            ->where('customer_id', $rental[$i]->customer_id)
+            ->orderBy('rental.rental_date', 'DESC')
+            ->get();
         }
         $customer->rental_history=$rental_history ;
 
