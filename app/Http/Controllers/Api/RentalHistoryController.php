@@ -35,6 +35,6 @@ class RentalHistoryController extends Controller
         }
         $customer->rental_history=$rental_history ;
 
-        return new SakilaResource(true, 200, "Succesfully get customer's rental history", $customer);
+        return new SakilaResource(true, '200', "Succesfully get customer's rental history", $customer);
     }
 }
